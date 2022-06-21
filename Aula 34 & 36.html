@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFB Cursos - Curso Java script</title>
+    <style>
+      #dv1{
+          width:50px;
+          height:50px;
+          border:1px solid #000;
+          background-color: #fff;
+          position:absolute;
+          left:0px;
+          top:0px;
+      }
+    </style>
+<script>
+    var px=0;
+    var py=0;
+    var obj;
+    function move(){
+        //obj=document.getElementById("dv1");
+        var tecla=event.keyCode; 
+        //37=Esquerda - 38=cima, 39=direita, 40=baixo
+       if(tecla==37){
+           px-=10;
+           obj.style.left=px+"px";
+       }else if(tecla==38){
+           py-=10;
+           obj.style.top=py+"px";
+       }else if(tecla==39){
+           px+=10;
+           obj.style.left=px+"px";
+       }else if(tecla==40){
+           py+=10;
+           obj.style.top=py+"px";
+       }else if(tecla==13){
+              
+            document.removeEventListener("keydown",move)
+            obj.style.backgroundColor="#fff";
+            alert("Evento keydwon removido") ;
+       }
+    }
+    function addClique(){
+        document.addEventListener("keydown",move);
+        obj.style.backgroundColor = "#f00";
+    }
+    function iniciar(){
+        obj=document.getElementById("dv1");
+        obj.addEventListener("click", addClique)
+    }
+    //document.addEventListener("keydown",move);
+    window.addEventListener("load",iniciar);
+
+</script>    
+</head>
+<body>
+<div id="dv1"></div>  
+    
+
+</body>
+
+</html>

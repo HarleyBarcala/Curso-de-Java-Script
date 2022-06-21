@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 41</title>
+    <style>
+         #quad{
+          width:100px;
+          height:100px;
+          border:1px solid #000;
+          background-color: #f00; 
+          position: absolute; 
+          left:100px;
+          top: 100px;
+         }
+    </style>
+    <script>
+        function contador(min,max){
+            document.write(min+"<br>");
+            if (min<max) contador(++min,max)            
+        }
+        //contador(0,10)
+        function fatorial(n){
+            if(n==1){
+                return 1;                
+            }
+            return n*fatorial(n-1); 
+        }
+    </script>
+</head>
+<body>
+    <div id="quad"></div>
+
+    <script>
+        var obj=document.getElementById("quad");
+        var ang=0, incremento=1;
+        
+        function gira(){
+            obj.style.transform="rotate("+ang+"deg)";
+            ang=ang+incremento;
+            if(ang>360||ang<-360){
+                ang=0
+                incremento=incremento*(-1);
+            }
+            
+            requestAnimationFrame(gira);
+        }
+        gira();
+    </script>
+</body>
+</html>
