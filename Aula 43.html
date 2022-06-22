@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 43</title>
+    <style>
+        #dvslider{
+            width:400px;
+            height:300px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+       var imgs=[], slider, imgAtual, maxImg, tmp, tempoTroca;
+
+        function preCarregamento(){
+            var s=1;
+            for (var i=0;i<3;i++) {
+            imgs[i]=new Image();
+            imgs[i].src="imgs/s"+s+".jpg";
+            s++;
+            }
+        }
+        function carregarImg(img){
+
+            slider.style.backgroundImage="url('"+imgs[img].src+"')";
+        }
+        function inicia(){
+            tempoTroca=1000;
+            preCarregamento();
+            imgAtual=0;
+            maxImg=imgs.length-1;
+            slider=document.getElementById("dvslider");
+            document.getElementById("Btparar").addEventListener("click",parar);
+            document.getElementById("Btinicia").addEventListener("click",retorna);            
+            carregarImg(imgAtual);
+            tmp=setInterval(troca,tempoTroca);
+        }
+        function troca(){        
+            imgAtual++;
+            if(imgAtual>maxImg){
+                imgAtual=0
+            } 
+            carregarImg(imgAtual);
+        }
+        function retorna(){
+        tmp=setInterval(troca,tempoTroca);
+        }
+        function parar(){
+        clearInterval(tmp);
+        console.log("para");
+        }
+        window.addEventListener("load",inicia);
+    </script>
+</head>
+<body>
+    <div id="dvslider"></div>
+    <button id="Btinicia">Inicia</button>
+    <button id="Btparar">Parar</button>
+</body>
+</html>
