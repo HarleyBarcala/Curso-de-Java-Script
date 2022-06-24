@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 47</title>
+</head>
+<body>
+    <p id="txt">CFB Cursos - Curso de Javascript - aula 46 do curso de javascript</p>
+    <script>
+
+        var texto=document.getElementById("txt").innerHTML;
+        document.write("charAt : " + texto.charAt(2) + "<br>");
+        document.write("charcodeAt : " + texto.charCodeAt(11) + "<br>");
+        document.write("search : " + texto.search(/-/ig) + "<br>");
+        document.write("replace : " + texto.replace(/curso/ig,"aula") + "<br>");
+        document.write("fromCharcode : " + String.fromCharCode(67) + "<br>");
+        document.write(texto.concat(" teste de concatenação"));
+    </script>
+</body>
+</html>
