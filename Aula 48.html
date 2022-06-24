@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="txt">CFB Cursos - Curso de Javascript - aula 46 do curso de javascript</p>
+    <script>
+
+        var texto1=document.getElementById("txt").innerHTML;
+        document.write("indexOf : " + texto1.indexOf("o") + "<br>");
+        document.write("lastIndexOf : " + texto1.lastIndexOf("o") + "<br>");
+        document.write("localeCompare : " + texto1.localeCompare("CFB Cursos") + "<br>");
+        document.write("slice : " + texto1.slice(3,10) + "<br>");
+        document.write("split : " + texto1.split(" ")[5] + "<br>");
+        document.write("substr : " + texto1.substr(4,5) + "<br>");
+        document.write("toLowercase : " + texto1.toLowerCase() + "<br>");
+        document.write("toUpperCase : " + texto1.toUpperCase().substr(22,10) + "<br>");
+    </script>
+
+</body>
+</html>
